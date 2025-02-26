@@ -121,6 +121,14 @@ client.on("messageCreate", async message => {
         // chcking if channel isn't assign
         let isExist = file.find(c => c.channelId == target.id);
         if (!isExist) return returnMsg("لم يتم تحديد الروم بالفعل");
+      // bot status
+       status: config.botStatus || "online",
+      activities: [{
+        name: config.presence ? config.presence : config.botActivityName || "No Data was filled out",
+        type: ActivityType.Streaming,
+        url: "https://www.twitch.tv/ctradess"
+      }]
+  });
 
         // removing the channel from the data
         file = file.filter(c => c.channelId != target.id);
