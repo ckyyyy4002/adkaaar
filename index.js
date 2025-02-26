@@ -1,6 +1,6 @@
 const { MessageEmbed, Permissions, Client, Intents } = require('discord.js');
 const { readFileSync, writeFileSync } = require("fs")
-
+const config = require("./config.json");
 const client = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
